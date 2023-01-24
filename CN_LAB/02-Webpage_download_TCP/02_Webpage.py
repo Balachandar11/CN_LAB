@@ -7,8 +7,9 @@ except socket.error as err:
     print("Socket creation failed with error %s" %(err))
 port = 80
 
+hname = input("Enter host address(www.examgle.com):")
 try:
-    host_ip = socket.gethostbyname('www.google.com')
+    host_ip = socket.gethostbyname(hname)
 except socket.gaierror:
  
     # this means could not resolve the host
