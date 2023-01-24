@@ -21,7 +21,9 @@ while True:
 
     # Extract the host name from the query
     hostname = query.decode()
-
+    if hostname=='exit':
+        print('Exiting')
+        break;
     # Look up the host name in the dictionary
     if hostname in hosts:
         # Send the IP address as the response
@@ -32,3 +34,4 @@ while True:
         # Send an error message if the host name is not found
         response = b"Error: Host not found"
         server_socket.sendto(response, addr)
+server_socket.close()
